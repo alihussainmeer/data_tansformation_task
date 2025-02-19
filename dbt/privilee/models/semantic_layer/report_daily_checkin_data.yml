@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: report_daily_checkin_data
+    description: |
+      Table contains the checkin data per daily. It contins both total_unique_checkins
+      and total_checkin_count
+
+    config:
+      schema: sl_capacity_data
+      materialized: table
+
+    columns:
+      - name: fk_venue_id
+        description: venue id
+
+
+      - name: usage_date
+        description: date of checkin
+
+
+      - name: unique_checkins_count
+        description: Counts distinct users per venue per day.
+
+
+      - name: total_checkins_count
+        description: Counts every entry per venue per day.
