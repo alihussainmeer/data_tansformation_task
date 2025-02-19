@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fact_venue_daily_policies
+    description: fact view  which contains venue policies on daily basis
+
+    config:
+      schema: dm_capacity_data
+      materialized: view
+
+    columns:
+      - name: venue_policy_date
+        description: Date of the policy application
+
+
+      - name: fk_partner_id
+        description: Unique identifier for the partner
+
+
+      - name: fk_venue_id
+        description: Unique identifier for the venue
+
+
+      - name: access_distribution
+        description: Type of capacity distribution (per-venue“allocated”/accross-locations “shared”)
+
+
+      - name: venue_type
+        description: Type of venue
+
+
+      - name: is_revolving
+        description: Boolean indicating the access model

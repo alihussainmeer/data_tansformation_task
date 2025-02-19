@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fact_venue_register
+    description: fact view which contains login and logout information about the users
+
+    config:
+      schema: dm_capacity_data
+      materialized: view
+
+    columns:
+      - name: pk_venue_register
+        description: primary key related to the table
+
+
+      - name: fk_user_id
+        description: foreign key to the Unique identifier for the user
+
+
+      - name: fk_venue_id
+        description: foreign key to the Venue where the event occurred
+
+
+      - name: created_at_timestamp_utc
+        description: Creation timestamp of the record (UTC)
+
+
+      - name: created_at_timestamp_ltz
+        description: Creation timestamp of the record (UTC)
+
+
+      - name: event_timestamp_utc
+        description: When the event occurred (Local time zone)
+
+      - name: event_timestamp_ltz
+        description: When the event occurred (Local time zone)
+
+
+      - name: event_name
+        description: 'enter or leave'
+
+
+      - name: event_type
+        description: |
+          Type of event registration:
+          - * 'scan': QR code scan for check-in
+          - * 'venue': Venue-initiated check-in
+          - * 'manual': Manual registration or user-initiated checkout
+          - * 'auto': Automatic checkout at day end
+          - * 'location': Location-based automatic checkout
+
+      - name: event_triggered_by
+        description: Event triggered by could be user, system or venue

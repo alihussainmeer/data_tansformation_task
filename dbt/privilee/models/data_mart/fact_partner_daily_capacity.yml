@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fact_partner_daily_capacity
+    description: fact view which contains daily capacity per partner
+
+    config:
+      schema: dm_capacity_data
+      materialized: view
+
+    columns:
+      - name: pk_partner_daily_capacity_id
+        description: primary key of the table
+
+
+      - name: capacity_date
+        description: Date of the capacity rule
+
+
+      - name: fk_partner_id
+        description: Unique identifier for the partner
+
+
+      - name: capacity_adults
+        description: Number of contracted spots shared among venues
