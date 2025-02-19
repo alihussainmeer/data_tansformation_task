@@ -1,3 +1,7 @@
+# Setting up environment on macos
+Run the following command
+```sh script.sh```
+____
 # DBT using postres database
 
 1. I am assuming you have a postgres connection
