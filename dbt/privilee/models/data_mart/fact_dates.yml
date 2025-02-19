@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: fact_dates
+    description: fact date contains dates
+
+    config:
+      schema: dm_capacity_data
+      materialized: table

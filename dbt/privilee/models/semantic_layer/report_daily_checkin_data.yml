@@ -6,6 +6,10 @@ models:
       Table contains the checkin data per daily. It contins both total_unique_checkins
       and total_checkin_count
 
+      completes the task :
+          Unique Checkins
+          Total Checkins
+
     config:
       schema: sl_capacity_data
       materialized: table

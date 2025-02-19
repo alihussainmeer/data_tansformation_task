@@ -4,6 +4,8 @@ models:
   - name: report_non_revolving_capacity_usage
     description: |
       Table contains the non revolving capacity usage for each venue
+      completes the task:
+        Capacity Utilization (based on access model and access distribution) for non_revolving access model
 
     config:
       schema: sl_capacity_data

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: report_peak_usage
+    description: |
+      Table contains the peak usage data for venues where is_revolving is true
+
+      completes the task :
+          Peak Usage (revolving partners/venues)
+
+    config:
+      schema: sl_capacity_data
+      materialized: table
