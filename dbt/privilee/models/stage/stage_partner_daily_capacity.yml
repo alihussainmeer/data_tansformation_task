@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stage_partner_daily_capacity
+    description: staging table which contains daily capacity per partner
+
+    config:
+      schema: stage_capacity_data
+      materialized: table
+
+    columns:
+      - name: pk_partner_daily_capacity_id
+        description: primary key of the table
+
+
+      - name: capacity_date
+        description: Date of the capacity rule
+
+
+      - name: fk_partner_id
+        description: Unique identifier for the partner
+
+
+      - name: capacity_adults
+        description: Number of contracted spots shared among venues

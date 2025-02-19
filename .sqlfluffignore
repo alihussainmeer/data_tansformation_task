@@ -1,0 +1,5 @@
+dbt/privilee/dbt_modules/
+dbt/privilee/macros/
+dbt/privilee/target/
+dbt/privilee/dbt_packages/
+.venv/

@@ -1,0 +1,31 @@
+version: 2
+
+seeds:
+  - name: venue_daily_policies
+    description: This table contains data for Venue policies
+
+    config:
+      schema: dl_capacity_data
+    columns:
+      - name: date
+        description: Date of the policy application
+
+
+      - name: partner_id
+        description: Unique identifier for the partner
+
+
+      - name: venue_id
+        description: Unique identifier for the venue
+
+
+      - name: access_distribution
+        description: Type of capacity distribution (per-venue“allocated”/accross-locations “shared”)
+
+
+      - name: venue_type
+        description: Type of venue
+
+
+      - name: is_revolving
+        description: Boolean indicating the access model

@@ -1,0 +1,18 @@
+****_______________________________________________________________________________________________________________________****
+    Installation on MacOS:
+****_______________________________________________________________________________________________________________________****
+
+1- Install Homebrew (if not installed):
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+2- brew install postgresql
+3- brew services start postgresql
+4- psql --version
+
+Mac (Homebrew)
+Start: brew services start postgresql
+Stop: brew services stop postgresql
+
+
+For GUI installation refer here: https://www.postgresql.org/download/macosx/
+####-----------------------------------------------------------------------------------------------------------------------####

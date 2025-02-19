@@ -1,0 +1,37 @@
+version: 2
+
+seeds:
+  - name: venue_register
+    description: Register which contains login and logout information about the users
+
+    config:
+      schema: dl_capacity_data
+    columns:
+      - name: user_id
+        description: Unique identifier for the us
+
+
+      - name: venue_id
+        description: Venue where the event occurred
+
+
+      - name: created_at
+        description: Creation timestamp of the record (UTC)
+
+
+      - name: event_timestamp
+        description: When the event occurred (UTC)
+
+
+      - name: event_name
+        description: 'enter or leave'
+
+
+      - name: event_type
+        description: |
+          Type of event registration:
+          - * 'scan': QR code scan for check-in
+          - * 'venue': Venue-initiated check-in
+          - * 'manual': Manual registration or user-initiated checkout
+          - * 'auto': Automatic checkout at day end
+          - * 'location': Location-based automatic checkout

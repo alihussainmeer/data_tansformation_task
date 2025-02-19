@@ -1,0 +1,12 @@
+privilee:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      port: 5432
+      dbname: privilee
+      schema: privilee
+      threads: 2
+      password: postgres #will be passed in as env variable

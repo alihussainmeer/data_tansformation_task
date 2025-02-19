@@ -1,0 +1,19 @@
+version: 2
+
+seeds:
+  - name: venue_daily_capacity
+    description: Daily capacity per venue
+
+    config:
+      schema: dl_capacity_data
+    columns:
+      - name: date
+        description: Date of the capacity rule
+
+
+      - name: venue_id
+        description: Unique identifier for the venue
+
+
+      - name: capacity_adults
+        description: Number of daily contracted spots for venues with allocated capacity

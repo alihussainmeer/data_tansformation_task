@@ -1,0 +1,19 @@
+version: 2
+
+seeds:
+  - name: partner_daily_capacity
+    description: Daily capacity per partner
+
+    config:
+      schema: dl_capacity_data
+    columns:
+      - name: date
+        description: Date of the capacity rule
+
+
+      - name: partner_id
+        description: Unique identifier for the partner
+
+
+      - name: capacity_adults
+        description: Number of contracted spots shared among venues
