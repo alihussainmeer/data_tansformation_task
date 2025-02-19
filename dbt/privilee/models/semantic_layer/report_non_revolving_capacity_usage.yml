@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: report_non_revolving_capacity_usage
+    description: |
+      Table contains the non revolving capacity usage for each venue
+
+    config:
+      schema: sl_capacity_data
+      materialized: table
+
+    columns:
+      - name: venue_policy_date
+        description: analysis date absed on venue policy
+
+
+      - name: fk_partner_id
+        description: partner id
+
+
+      - name: fk_venue_id
+        description: venue id.
+
+
+      - name: unique_checkins
+        description: total unique checkins per venue per day.
+
+      - name: venue_capacity_adults
+        description: capacity per venue on a given date
+
+      - name: partner_capacity_adults
+        description: capacity per partner on a given date
+
+      - name: unique_checkins_per_partner
+        description: total unique checkins per partner
+
+      - name: capacity_status
+        description: capacity status if exceeded or within limit

@@ -1,9 +1,9 @@
 SELECT
-    date(event_timestamp_ltz) AS usage_date,
-    fk_venue_id,
-    COUNT(DISTINCT fk_user_id) AS unique_checkins_count,
-    COUNT(fk_user_id) AS total_checkins_count
+    date(EVENT_TIMESTAMP_LTZ) AS USAGE_DATE,
+    FK_VENUE_ID,
+    count(DISTINCT FK_USER_ID) AS UNIQUE_CHECKINS_COUNT,
+    count(FK_USER_ID) AS TOTAL_CHECKINS_COUNT
 
 FROM {{ ref('stage_venue_register') }}
-    WHERE event_name = 'ENTER'
+WHERE EVENT_NAME = 'ENTER'
 GROUP BY 1, 2
