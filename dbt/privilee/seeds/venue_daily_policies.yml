@@ -9,23 +9,35 @@ seeds:
     columns:
       - name: date
         description: Date of the policy application
+        tests:
+          - not_null
 
 
       - name: partner_id
         description: Unique identifier for the partner
-
+        tests:
+          - not_null
 
       - name: venue_id
         description: Unique identifier for the venue
-
+        tests:
+          - not_null
 
       - name: access_distribution
         description: Type of capacity distribution (per-venue“allocated”/accross-locations “shared”)
-
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['per-venue', 'across-locations']
 
       - name: venue_type
         description: Type of venue
-
+        tests:
+          - not_null
 
       - name: is_revolving
         description: Boolean indicating the access model
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['true', 'false']
