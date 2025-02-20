@@ -1,3 +1,5 @@
+> **Note:**  This is done with the understanding that I have to perform this analysis keeping engineering practices in mind and creating an ideal structure which is scalable, I have added the reports at the end in the semantic layer as well which can be connected to any dashboard and can provide the required information. 
+
 # Setting up environment on macos
 Run the following command
 ```sh script.sh```
