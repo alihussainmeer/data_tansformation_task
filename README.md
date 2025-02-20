@@ -56,11 +56,21 @@ ___
 
 ## Test for data quality
 
+I have added around 28 tests on the source data to ensure data integrity and quality of the data we recieve from the source. Ideally i would setup more in the stage and marts after discussions with analysts and business stakeholders. you can use the following command to run the tests at the source.
 
+`dbt test --target dev --profiles-dir ../ --select seeds/*`
 
 ___
 
 
 # High level picture of architetcure
 ![Alt text for image](high_level_arch.jpg)
+
+
+
+___
+
+## Orchestration in Airflow [Later stage]
+
+All the commands will be run in the airflow later
 
