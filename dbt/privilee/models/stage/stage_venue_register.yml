@@ -9,36 +9,51 @@ models:
       materialized: table
 
     columns:
-      - name: pk_venue_register
+      - name: pk_venue_register_id
         description: primary key related to the table
-
+        tests:
+          - unique
+          - not_null
 
       - name: fk_user_id
         description: foreign key to the Unique identifier for the user
-
+        tests:
+          - not_null
 
       - name: fk_venue_id
         description: foreign key to the Venue where the event occurred
-
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stage_venue_daily_policies')
+              field: fk_venue_id
 
       - name: created_at_timestamp_utc
         description: Creation timestamp of the record (UTC)
-
+        tests:
+          - not_null
 
       - name: created_at_timestamp_ltz
         description: Creation timestamp of the record (UTC)
-
+        tests:
+          - not_null
 
       - name: event_timestamp_utc
         description: When the event occurred (Local time zone)
+        tests:
+          - not_null
 
       - name: event_timestamp_ltz
         description: When the event occurred (Local time zone)
-
+        tests:
+          - not_null
 
       - name: event_name
         description: 'enter or leave'
-
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ["ENTER", "LEAVE"]
 
       - name: event_type
         description: |
@@ -48,6 +63,13 @@ models:
           - * 'manual': Manual registration or user-initiated checkout
           - * 'auto': Automatic checkout at day end
           - * 'location': Location-based automatic checkout
-
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ["SCAN", "VENUE", "MANUAL", "AUTO", "LOCATION"]
       - name: event_triggered_by
         description: Event triggered by could be user, system or venue
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ["USER", "SYSTEM", "VENUE"]

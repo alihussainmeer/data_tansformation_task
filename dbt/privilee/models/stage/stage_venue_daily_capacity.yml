@@ -11,15 +11,27 @@ models:
     columns:
       - name: pk_venue_daily_capacity_id
         description: primary key related tot his table
+        tests:
+          - unique
+          - not_null
 
-
-      - name: date
+      - name: capacity_date
         description: Date of the capacity rule
+        tests:
+          - not_null
 
-
-      - name: partner_id
-        description: Unique identifier for the partner
+      - name: fk_venue_id
+        description: Unique identifier for the venue
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stage_venue_daily_policies')
+              field: fk_venue_id
 
 
       - name: capacity_adults
         description: Number of contracted spots shared among venues
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer

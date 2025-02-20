@@ -11,23 +11,38 @@ models:
     columns:
       - name: venue_policy_date
         description: Date of the policy application
-
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
 
       - name: fk_partner_id
         description: Unique identifier for the partner
-
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^[a-f0-9\\-]{36}$" # UUID format check
 
       - name: fk_venue_id
         description: Unique identifier for the venue
-
+        tests:
+          - not_null
 
       - name: access_distribution
         description: Type of capacity distribution (per-venue“allocated”/accross-locations “shared”)
-
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['PER-VENUE','ACROSS-LOCATIONS']
 
       - name: venue_type
         description: Type of venue
-
+        tests:
+          - not_null
 
       - name: is_revolving
         description: Boolean indicating the access model
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
