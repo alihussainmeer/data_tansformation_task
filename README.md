@@ -64,6 +64,9 @@ Ideally i would setup more in the stage and marts after discussions with analyst
 
 `dbt test --target dev --profiles-dir ../ --select seeds/*`
 
+Following is the command to run all tests at stage:
+
+`dbt test --target dev --profiles-dir ../ --select models/stage/*`
 ___
 
 
