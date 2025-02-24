@@ -1,4 +1,4 @@
-> **Note:**  This is done with the understanding that I have to perform this analysis keeping engineering practices in mind and creating an ideal structure which is scalable, I have added the reports at the end in the semantic layer as well which can be connected to any dashboard and can provide the required information. 
+> **Note:**  This is done with the understanding that I have to perform this analysis keeping engineering practices in mind and creating an ideal structure which is scalable, I have added the reports at the end in the semantic layer as well which can be connected to any dashboard and can provide the required information.
 
 # Setting up environment on macos
 Run the following command
@@ -83,3 +83,7 @@ ___
 
 All the commands will be run in the airflow later
 
+
+docker build -t data_transformation_dbt .
+docker run --rm -it --env-file .env data_transformation_dbt
+dbt seed --target dev --profiles-dir ../ && dbt run --target dev --profiles-dir ../ && dbt test --target dev --profiles-dir ../

@@ -3,10 +3,11 @@ privilee:
   outputs:
     dev:
       type: postgres
-      host: localhost
-      user: postgres
-      port: 5432
-      dbname: privilee
-      schema: privilee
+      # host: localhost
+      host: host.docker.internal
+      user: "{{ env_var('POSTGRES_USER') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD') }}"
+      port: 5432  # Default to 5432 if not set
+      dbname: "{{ env_var('POSTGRES_DB') }}"
+      schema: "{{ env_var('POSTGRES_SCHEMA') }}"
       threads: 2
-      password: postgres #will be passed in as env variable
