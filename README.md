@@ -87,3 +87,7 @@ All the commands will be run in the airflow later
 docker build -t data_transformation_dbt .
 docker run --rm -it --env-file .env data_transformation_dbt
 dbt seed --target dev --profiles-dir ../ && dbt run --target dev --profiles-dir ../ && dbt test --target dev --profiles-dir ../
+
+
+link to video guide:
+https://drive.google.com/file/d/1SSV8OqGXe030hGNQqJChbk9Ov4hDFrW9/view?usp=sharing 
